@@ -1,0 +1,106 @@
+.columns{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content:space-around; 
+}
+.column{
+	text-align: center;
+	padding-right: 2%;
+}
+.column:nth-child(4n){
+	padding-right: 0;
+}
+.h3 {
+	color: blue;
+}
+.subheader span{
+	display: block;
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+}
+.filialPhoto img{
+	max-width: 100%;
+}
+.discription{
+	font-size: small;
+}
+.priceContainer{
+	margin-bottom: 2px;
+	margin-top: 2px;
+	display: flex;
+}
+.priceTitle{
+	padding: 2px;
+	border: solid  1px #ccc;
+	border-right-width: 0px;
+	text-align: left;
+	width: 60%;
+}
+.price{
+	padding: 2px;
+	border: solid  1px #ccc;
+	border-radius: 0px 1px 1px 0px;
+	border-left-width: 1px;
+	width: 40%;
+}
+.actionRed{
+	color:#ed174b;
+}
+.addBasket{
+	background: #ed174b;
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;CountdownData
+	display: -o-flex;
+	display: flex;
+	padding: 3px;
+	color:#fff;
+}
+.icon {
+	width: 10%;
+}
+.buttontitle{
+	text-align: center;
+	width: 100%;
+}
+.defaultCountdown{
+	background-image: url(https://cdn.juna-life.ru/img/countDay_b.png);
+    background-attachment: initial;
+    background-origin: initial;
+    background-clip: initial;
+    background-color: initial;
+    background-size: inherit;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100px;
+    width: 100px;
+}
+.defaultCountdownDays{
+	background-image: url(https://cdn.juna-life.ru/img/countDay_s.png);
+    background-attachment: initial;
+    background-origin: initial;
+    background-clip: initial;
+    background-color: initial;
+    background-size: inherit;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100px;
+    width: 100px;
+}
+.CountdownData{
+	position: relative;
+	top: 34px;
+	left:2px;
+	color: #fff;
+}
+.ActionPlace{
+    display: flex;
+    justify-content: space-around;
+}
+.userEmail {
+	width:100%;
+	padding:2px;
+	border: solid  1px #ccc;
+	border-radius: 0px 1px 1px 0px;
+}

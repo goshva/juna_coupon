@@ -1,0 +1,58 @@
+{  
+   "clubs":[  
+      {  
+         "id":"00001",
+         "header":"ЮНА Aqua Life на Горбунова",
+         "address":"ул. Горбунова, д. 2, стр. 3",
+         "filialPhotoSrc":"gorbun2.jpg",
+         "clubTitle":"Только для дрзей клуба",
+         "actionTitle":"Только для дрзей клуба",
+         "standartPrice":40000,
+         "actionPrice":20000,
+         "actionStart":"24",
+         "actionStop":"28",
+         "countDays":"4",
+         "countCoupons":"2"
+      },
+      {  
+         "id":"00002",        
+         "header":"ЮНА Aqua Life на Каширке",
+         "address":"Каширсое шоссе, д.61, корп. 3а",
+         "filialPhotoSrc":"kashirka2.jpg",
+         "actionTitle":"Клубная карта учебный год",
+         "standartPrice":40000,
+         "actionPrice":20000,
+         "actionStart":"24",
+         "actionStop":"28",
+         "countDays":"0",
+         "countCoupons":"2"
+      },
+      {  
+         "id":"00003",         
+         "header":"ЮНА Aqua Life на Каширке",
+         "address":"Каширсое шоссе, д.61, корп. 3а",
+         "filialPhotoSrc":"hotel.jpg",
+         "actionTitle":"Только для дрзей клуба",
+         "standartPrice":40000,
+         "actionPrice":20000,
+         "actionStart":"24",
+         "actionStop":"28",
+         "countDays":"4",
+         "countCoupons":"1"
+      },
+      {  
+         "id":"00004",
+         "header":"ЮНА Aqua Life на Каширке",
+         "address":"Каширсое шоссе, д.61, корп. 3а",
+         "filialPhotoSrc":"hotel.jpg",
+
+         "actionTitle":"Клубная карта учебный год",
+         "standartPrice":40000,
+         "actionPrice":20000,
+         "actionStart":"24",
+         "actionStop":"28",
+         "countDays":"0",
+         "countCoupons":"5"
+      }
+   ]
+}

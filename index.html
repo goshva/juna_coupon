@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <title>Document</title>
+      <link rel="stylesheet" href="style.css">
+      <script src="http://cdnjs.cloudflare.com/ajax/libs/vue/1.0.25/vue.min.js"></script>
+   </head>
+   <body>
+      <div class="c1">
+         <div class="c5 baguetteBoxOne gallery">
+            <div id="app">
+               <div  class="columns">
+                  <div v-for="club in clubs" class="column">
+                     <div class="h3">{{ club.header }} </div>
+                     <div class="subheader"> <span>{{ club.address }}</span>   </div>
+                     <div class="filialPhoto"><img src="{{ ImageCupon }}" alt="{{ actionTitle }}"></div>
+                     <div class="discription">
+                        {{club.actionStart}}
+                        {{club.actionStop}}
+                        {{club.Title}}
+                     </div>
+                     <div class="prices">
+                        <div class="priceContainer">
+                           <div class="priceTitle">Обычная цена</div>
+                           <div class="price">{{ club.BasePrice }}</div>
+                        </div>
+                        
+                        <div class="priceContainer">
+                           <div class="priceTitle">Цена со скидкой</div>
+                           <div class="price"><span class="actionRed">{{ club.Price }}</span></div>
+                        </div>
+                     </div>
+                     <div class="ActionPlace">
+                        <div class="defaultCountdown">
+                           <div class="CountdownData"> осталось <br> {{ club.TotalCountCupon }} шт </div>
+                        </div>
+                        <div class="defaultCountdownDays">
+                           <div class="CountdownData"> осталось <br> {{ club.CountDayEnd }} дня </div>
+                        </div>
+
+                     </div>
+
+                     <div class="priceContainer">
+                        <input type="email" class="userEmail" placeholder="Введите ваш email">
+                     </div>
+                     <div class="addBasket">
+                        <div class="icon">🛒</div>
+                        <div class="buttontitle">Получить купон на почту</div>
+                     </div>                     
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <script src="./js/app.js"></script>
+   </body>
+</html>
