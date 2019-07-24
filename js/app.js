@@ -19,6 +19,15 @@ new Vue({
     })
   },
   methods: {
+    couponme: function(coupon) {
+      const params  = { row: coupon.CuponOptionRowID, l:coupon.LinkeID, e:coupon.Email  }
+      var queryString = Object.keys(params).map(key => key + '=' + params[key]).join('&');
+      fetch('./content/couponme.php?'+queryString).then((response) => {
+         return response.json().then((json) => {
+           this.clubs = json
+         })
+      })
+    },
     isEmailValid: function() {
       return (this.email == "")? "" : (this.reg.test(this.email)) ? 'has-success' : 'has-error';
     }

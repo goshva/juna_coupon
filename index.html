@@ -46,11 +46,11 @@
                      </div>
 
                      <div :class="['priceContainer', isEmailValid()]">
-                        <input v-model="email" type="email" class="userEmail" value="sha.egor@gmail.ru" placeholder="Введите ваш email">
+                        <input v-model="club.Email" type="email" class="userEmail" value="sha.egor@gmail.ru" placeholder="Введите ваш email">
                      </div>
                      <div class="addBasket">
                         <div class="icon">🛒</div>
-                        <div class="buttontitle">Получить купон на почту</div>
+                        <div v-on:click = "couponme(club)" class="buttontitle">Получить купон на почту</div>
                      </div>                     
                   </div>
                </div>
