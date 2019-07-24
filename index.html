@@ -13,8 +13,12 @@
                <div  class="columns">
                   <div v-for="club in clubs" class="column">
                      <div class="h3">{{ club.header }} </div>
-                     <div class="subheader"> <span>{{ club.address }}</span>   </div>
-                     <div class="filialPhoto"><img src="{{ ImageCupon }}" alt="{{ actionTitle }}"></div>
+                     <div class="subheader">
+                         <span>{{ club.address }}</span>
+                     </div>
+                     <div class="filialPhoto">
+                         <img :src="club.ImageCupon">
+                     </div>
                      <div class="discription">
                         {{club.actionStart}}
                         {{club.actionStop}}
@@ -41,8 +45,8 @@
 
                      </div>
 
-                     <div class="priceContainer">
-                        <input type="email" class="userEmail" placeholder="Введите ваш email">
+                     <div :class="['priceContainer', isEmailValid()]">
+                        <input v-model="email" type="email" class="userEmail" value="sha.egor@gmail.ru" placeholder="Введите ваш email">
                      </div>
                      <div class="addBasket">
                         <div class="icon">🛒</div>

@@ -104,3 +104,6 @@
 	border: solid  1px #ccc;
 	border-radius: 0px 1px 1px 0px;
 }
+.has-success{background: #fcf;}
+
+.has-error{background: #f00;}
