@@ -25,8 +25,7 @@ new Vue({
     },
     couponme: function(coupon) {
       const params  = { row: coupon.CuponOptionRowID, l:coupon.LinkeID, e:coupon.Email  }
-      var queryString = Object.keys(params).map(key => key + '=' + params[key]).join('&');
-      fetch('./content/couponme.php?'+queryString, {method: 'POST'}).then((response) => {
+      fetch('./content/couponme.php?', {method: 'POST', body: JSON.stringify(params) }).then((response) => {
          return response.json().then((json) => {
            this.myCouponId = json
            this.freeCouponsList()
