@@ -1,3 +1,5 @@
+body{  font-family: Lato;
+};
 .columns{
 	display: flex;
 	flex-wrap: wrap;
@@ -108,6 +110,30 @@
 
 .has-error{background: #f00;}
 
+.loadfreeze {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: #fff;
+  z-index: 99999;
+  -webkit-transition: opacity 600ms ease-in;
+  -moz-transition: opacity 600ms ease-in;
+  transition: opacity 600ms ease-in;
+  pointer-events: none; }
+
+.loadfreeze:target {
+  display: block;
+  pointer-events: auto; }
+
+.center {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 
 /* 
   ##Device = Desktops

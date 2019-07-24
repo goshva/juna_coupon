@@ -5,7 +5,7 @@ new Vue({
     coupons: [],
     email: '',
     reg: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,24}))$/,
-    myCouponId:'',  
+    myCouponId:'', 
   },
   computed: {
     coupon: function () {
@@ -44,7 +44,7 @@ new Vue({
       })
       .then((response) => {
          return response.json().then((json) => {
-           this.myCouponId = json
+           this.myCouponId = json.CuponCode
            this.freeCouponsList()
          })
       })
