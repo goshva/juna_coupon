@@ -13,19 +13,23 @@ new Vue({
     }
   },
   created: function() {
-    fetch('./content/freeCoupons.php?'+this.coupon).then((response) => {
-      return response.json().then((json) => {
-      this.clubs = json
-      })
-    })
+    this.freeCouponsList()
   },
   methods: {
+    freeCouponsList: function() {
+      fetch('./content/freeCoupons.php?'+this.coupon).then((response) => {
+        return response.json().then((json) => {
+        this.clubs = json
+        })
+      })
+    },
     couponme: function(coupon) {
       const params  = { row: coupon.CuponOptionRowID, l:coupon.LinkeID, e:coupon.Email  }
       var queryString = Object.keys(params).map(key => key + '=' + params[key]).join('&');
       fetch('./content/couponme.php?'+queryString, {method: 'POST'}).then((response) => {
          return response.json().then((json) => {
            this.myCouponId = json
+           this.freeCouponsList()
          })
       })
     },
