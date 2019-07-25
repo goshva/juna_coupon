@@ -1,11 +1,11 @@
 new Vue({
   el: '#app',
   data: {
-    clubs: [],
     coupons: [],
     email: '',
     reg: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,24}))$/,
-    myCouponId:'', 
+    myCouponId:null,
+    error:''
   },
   computed: {
     coupon: function () {
@@ -14,17 +14,9 @@ new Vue({
     }
   },
   created: function() {
-    this.clubsList()
+    this.freeCouponsList()
   },
   methods: {
-    clubsList: function() {
-      fetch('./content/clubs.json').then((response) => {
-        return response.json().then((json) => {
-        this.clubs = json.clubs
-        this.freeCouponsList()
-        })
-      })
-    },
     freeCouponsList: function() {
       fetch('./content/freeCoupons.php?'+this.coupon).then((response) => {
         return response.json().then((json) => {
@@ -43,14 +35,17 @@ new Vue({
           body: JSON.stringify(params)
       })
       .then((response) => {
-         return response.json().then((json) => {
-           this.myCouponId = json.CuponCode
+        return response.json().then((json) => {
+          if (json.CuponCode === '-2'){ this.error = 'Купоны закончились'}
+          if (json.CuponCode === '-1'){ this.error = 'Достигнут лимит для ящика'}
+          else {this.myCouponId = json.CuponCode }
+
            this.freeCouponsList()
          })
       })
     },
-    isEmailValid: function() {
-      return (this.email == "")? "" : (this.reg.test(this.email)) ? 'has-success' : 'has-error';
+    isEmailValid: function(coupon) {
+      return (coupon.Email == "")? "" : (this.reg.test(coupon.Email)) ? 'has-success' : 'has-error';
     }
   }
 })

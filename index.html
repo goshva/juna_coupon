@@ -12,18 +12,30 @@
          <div class="c5 baguetteBoxOne gallery">
             <div id="app">
                <div id="loading" class="loadfreeze" v-if="myCouponId">
-                   <div class="center"> {{ myCouponId }} <br>
-                   <img :src="`https://api.qrserver.com/v1/create-qr-code/?data=${myCouponId}`">
-                   <br>
-                   <small>*Cделайте скриншот </small>
-                   </div>
+                  <div class="center"> {{ myCouponId }} <br>
+                     <img :src="`https://api.qrserver.com/v1/create-qr-code/?data=${myCouponId}`">
+                     <br>
+                     <span>Cделайте скриншот </span>
+                     <div class="addBasket">
+                       <div v-on:click = "location.reload();"  class="buttontitle">Готово</div>
+                     </div>
+                  </div>
                </div>
+               <div id="loading" class="loadfreeze" v-if="error">
+                   <div class="center"> {{ error }} <br>
+                     <div class="addBasket">
+                       <div v-on:click = "location.reload();" class="buttontitle">Готово</div>
+                     </div>  
+                   </div>
+               </div>               
                <div  class="columns">
                   <div v-for="coupon in coupons" class="column">
                      <div class="h3">{{ coupon.CompanyName }}</div>
                      <div class="subheader">
-                         <span>{{ coupon.WebSite }}</span>
                          <span>{{ coupon.CompanyAddress }}</span>
+                         <span>{{ coupon.WebSite }}</span>
+                         <span>{{ coupon.CompanyPhones}}</span>
+
                      </div>
                      <div class="filialPhoto">
                          <img :src="coupon.ImageCupon">

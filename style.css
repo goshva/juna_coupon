@@ -55,7 +55,7 @@ body{
 	background: #ed174b;
 	display: -webkit-flex;
 	display: -moz-flex;
-	display: -ms-flex;CountdownData
+	display: -ms-flex;
 	display: -o-flex;
 	display: flex;
 	padding: 3px;
@@ -77,8 +77,8 @@ body{
     background-size: inherit;
     background-repeat: no-repeat;
     background-position: center;
-    height: 100px;
-    width: 100px;
+    height: 120px;
+    width: 120px;
 }
 .defaultCountdownDays{
 	background-image: url(https://cdn.juna-life.ru/img/countDay_s.png);
@@ -89,12 +89,12 @@ body{
     background-size: inherit;
     background-repeat: no-repeat;
     background-position: center;
-    height: 100px;
-    width: 100px;
+    height: 120px;
+    width: 120px;
 }
 .CountdownData{
 	position: relative;
-	top: 34px;
+	top: 46px;
 	left:1px;
 	color: #fff;
 }
