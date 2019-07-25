@@ -17,18 +17,18 @@
                      <br>
                      <span>Cделайте скриншот </span>
                      <div class="addBasket">
-                       <div v-on:click = "location.reload();"  class="buttontitle">Готово</div>
+                       <div onclick = "location.reload();"  class="buttontitle">Готово</div>
                      </div>
                   </div>
                </div>
                <div id="loading" class="loadfreeze" v-if="error">
                    <div class="center"> {{ error }} <br>
                      <div class="addBasket">
-                       <div v-on:click = "location.reload();" class="buttontitle">Готово</div>
+                       <div onclick = "location.reload();" class="buttontitle">Готово</div>
                      </div>  
                    </div>
                </div>               
-               <div  class="columns">
+               <div  class="columns" v-if="!myCouponId">
                   <div v-for="coupon in coupons" class="column">
                      <div class="h3">{{ coupon.CompanyName }}</div>
                      <div class="subheader">
