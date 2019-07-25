@@ -20,9 +20,10 @@
                </div>
                <div  class="columns">
                   <div v-for="coupon in coupons" class="column">
-                     <div class="h3">{{ clubs[coupon.CompanyID].name }}</div>
+                     <div class="h3">{{ coupon.CompanyName }}</div>
                      <div class="subheader">
-                         <span>{{ clubs[coupon.CompanyID].address }}</span>
+                         <span>{{ coupon.WebSite }}</span>
+                         <span>{{ coupon.CompanyAddress }}</span>
                      </div>
                      <div class="filialPhoto">
                          <img :src="coupon.ImageCupon">
@@ -59,7 +60,7 @@
                      </div>
                      <div class="addBasket">
                         <div class="icon">🛒</div>
-                        <div v-on:click = "couponme(coupon)" class="buttontitle">Получить купон на почту</div>
+                        <div v-on:click = "couponme(coupon)" class="buttontitle">Получить скидку {{coupon.PriceDiscount*100 }}%</div>
                      </div>                     
                   </div>
                </div>

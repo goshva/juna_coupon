@@ -10,7 +10,7 @@ new Vue({
   computed: {
     coupon: function () {
       const urlParams = new URLSearchParams(window.location.search);
-    return urlParams.toString();
+      return urlParams.toString();
     }
   },
   created: function() {
