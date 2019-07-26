@@ -44,8 +44,11 @@ new Vue({
          })
       })
     },
-    isEmailValid: function(coupon) {
-      return (coupon.Email == "")? "" : (this.reg.test(coupon.Email)) ? 'has-success' : 'has-error';
+    isEmailValid: function(email) {
+      const EmailValid = this.reg.test(email);
+      console.log(email)
+      console.log(EmailValid);
+      return EmailValid;
     }
   }
 })

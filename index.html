@@ -67,12 +67,14 @@
 
                      </div>
 
-                     <div :class="['priceContainer', isEmailValid()]">
-                        <input v-model="coupon.Email" type="email" class="userEmail" placeholder="Введите ваш email">
+                     <div class="priceContainer">
+                        <input v-model="coupon.Email" type="email" class="userEmail"
+                        placeholder="Введите ваш email">
                      </div>
                      <div class="addBasket">
                         <div class="icon">🛒</div>
-                        <div v-on:click = "couponme(coupon)" class="buttontitle">Получить скидку {{coupon.PriceDiscount*100 }}%</div>
+                        <div v-on:click = "isEmailValid(coupon.Email) && couponme(coupon)" class="buttontitle">Получить скидку {{coupon.PriceDiscount*100 }}%
+                        </div>
                      </div>                     
                   </div>
                </div>
