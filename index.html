@@ -3,6 +3,7 @@
    <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="Refresh" content="60" />
       <title>Получить скидочный купон</title>
       <link rel="stylesheet" href="style.css">
       <script src="/js/vue.min.js"></script>
@@ -29,7 +30,7 @@
                    </div>
                </div>               
                <div  class="columns" v-if="!myCouponId">
-                  <div v-for="coupon in coupons" class="column">
+                  <div v-for="coupon in coupons" class="column" :style="{ opacity: coupon.TotalCountCupon* (coupon.BasePrice - coupon.Price)}">
                      <div class="h3">{{ coupon.CompanyName }}</div>
                      <div class="subheader">
                          <span>{{ coupon.CompanyAddress }}</span>

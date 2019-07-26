@@ -12,7 +12,14 @@ body{
 	padding: 2%;
 	margin-bottom: 3%;
 	background: #fff;
-
+}
+.column_disabled{
+	text-align: center;
+	padding: 2%;
+	margin-bottom: 3%;
+	background: #fff;
+	opacity: 0.5;
+    background: #CCC;
 }
 .h3 {
 	color: blue;
