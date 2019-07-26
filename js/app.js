@@ -14,7 +14,10 @@ new Vue({
     }
   },
   created: function() {
-    this.freeCouponsList()
+    this.freeCouponsList();
+    if (localStorage.email) {
+      this.email = localStorage.email;
+    }
   },
   methods: {
     freeCouponsList: function() {
@@ -24,8 +27,8 @@ new Vue({
         })
       })
     },
-    couponme: function(coupon) {
-      const params  = { row: coupon.CuponOptionRowID, l:coupon.LinkeID, e:coupon.Email  }
+    couponme: function(coupon,email) {
+      const params  = { row: coupon.CuponOptionRowID, l:coupon.LinkeID, e:email  }
       fetch('./content/couponme.php', {
           method: 'POST',
           headers: {
@@ -38,16 +41,13 @@ new Vue({
         return response.json().then((json) => {
           if (json.CuponCode === '-2'){ this.error = 'Купоны закончились'}
           if (json.CuponCode === '-1'){ this.error = 'Достигнут лимит для ящика'}
-          else {this.myCouponId = json.CuponCode }
-
+          else {this.myCouponId = json.CuponCode;localStorage.email = this.email;}
            this.freeCouponsList()
          })
       })
     },
     isEmailValid: function(email) {
       const EmailValid = this.reg.test(email);
-      console.log(email)
-      console.log(EmailValid);
       return EmailValid;
     }
   }
