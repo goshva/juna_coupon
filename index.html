@@ -12,6 +12,11 @@
       <div class="c1">
          <div class="c5 baguetteBoxOne gallery">
             <div id="app">
+               <div id="loading" class="loadfreeze" v-if="loading">
+                  <div class="center">
+                     <span>Отправка купона...</span>
+                  </div>
+               </div>
                <div id="loading" class="loadfreeze" v-if="myCouponId">
                   <div class="center">
                      <span>Купон выслан на почту</span>

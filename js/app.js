@@ -5,6 +5,7 @@ new Vue({
     email: '',
     reg: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,24}))$/,
     myCouponId:null,
+    loading:false,
     error:''
   },
   computed: {
@@ -28,6 +29,7 @@ new Vue({
       })
     },
     couponme: function(coupon,email) {
+      this.loading = true;
       const params  = { row: coupon.CuponOptionRowID, l:coupon.LinkeID, e:email  }
       fetch('./content/couponme.php', {
           method: 'POST',
@@ -39,6 +41,7 @@ new Vue({
       })
       .then((response) => {
         return response.json().then((json) => {
+          this.loading = false;
           if (json.CuponCode === '-2'){ this.error = 'Купоны закончились'}
           if (json.CuponCode === '-1'){ this.error = 'Достигнут лимит для ящика'}
           else {this.myCouponId = json.CuponCode;localStorage.email = this.email;}
