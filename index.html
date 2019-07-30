@@ -13,14 +13,8 @@
          <div class="c5 baguetteBoxOne gallery">
             <div id="app">
                <div id="loading" class="loadfreeze" v-if="myCouponId">
-                  <div class="center"> {{ myCouponId }} <br>
-                     <img :src="`https://api.qrserver.com/v1/create-qr-code/?data=${myCouponId}`">
-                     <br>
-                     <span>Cделайте скриншот </span>
-                     <div class="addBasket">
-                       <div onclick = "location.reload();"  class="buttontitle">Готово</div>
-                     </div>
-                     <br>
+                  <div class="center">
+                     <span>Купон выслан на почту</span>
                      <div class="addBasket">
                        <a href="http://sales.juna-life.ru/FreeCouponPrint.aspx?CouponCode={{myCouponId}}&export=1"  class="buttontitle">Cкачать купон</a>
                      </div>                     
