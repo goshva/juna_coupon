@@ -68,9 +68,7 @@ body{
 	padding: 3px;
 	color:#fff;
 }
-a{
-	color:#fff;
-}
+
 .addBasket:disabled {
 	background: #ccc;
 }

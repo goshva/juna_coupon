@@ -12,26 +12,25 @@
       <div class="c1">
          <div class="c5 baguetteBoxOne gallery">
             <div id="app">
-               <div id="loading" class="loadfreeze" v-if="loading">
-                  <div class="center">
-                     <span>Отправка купона...</span>
-                  </div>
-               </div>
-               <div id="loading" class="loadfreeze" v-if="myCouponId">
+               <div class="loadfreeze" v-if="myCouponId">
                   <div class="center">
                      <span>Купон выслан на почту</span>
-                     <div class="addBasket">
-                       <a href="http://sales.juna-life.ru/FreeCouponPrint.aspx?CouponCode={{myCouponId}}&export=1"  class="buttontitle">Cкачать купон</a>
+                     <div class="forLinks">
+                       <a href="http://sales.juna-life.ru/FreeCouponPrint.aspx?CouponCode={{myCouponId}}&export=1" >Cкачать купон</a>
                      </div>                     
+                     <div class="addBasket">
+                       <div onclick = "location.reload();" class="buttontitle">Готово</div>
+                     </div>  
                   </div>
                </div>
-               <div id="loading" class="loadfreeze" v-if="error">
+               <div class="loadfreeze" v-if="error">
                    <div class="center"> {{ error }} <br>
                      <div class="addBasket">
                        <div onclick = "location.reload();" class="buttontitle">Готово</div>
                      </div>  
                    </div>
                </div>               
+               <div class="loadfreeze" v-show="!!loading"></div>               
                <div  class="columns" v-if="!myCouponId">
                   <div v-for="coupon in coupons" class="column" :style="{ opacity: coupon.TotalCountCupon* (coupon.BasePrice - coupon.Price)}">
                      <div class="h3">{{ coupon.CompanyName }}</div>
